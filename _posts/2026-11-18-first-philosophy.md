@@ -1,11 +1,10 @@
 ---
 layout: post
-title: "철학은 왜 필요한가?"
+title: 철학은 왜 필요한가?
 date: 2026-11-18 09:00:00 +0900
 category: philosophy
 permalink: /philosophy/first-post/
 ---
-
 ## 1. 철학이란 무엇인가?
 
 철학은 인간과 세계, 지식과 가치에 관한
