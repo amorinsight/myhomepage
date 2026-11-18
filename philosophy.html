@@ -1,0 +1,73 @@
+
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>철학 게시판 | Amor Insight</title>
+  <style>
+    body {
+      margin: 0;
+      background: #EEF1E8;
+      color: #2A3530;
+      font-family: "Malgun Gothic", sans-serif;
+      line-height: 1.7;
+    }
+    main {
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #FAFBF6;
+      border-radius: 16px;
+    }
+    h1 { color: #2F5D50; }
+    .post {
+      padding: 20px 5px;
+      border-bottom: 1px solid #DDE3D6;
+    }
+    .post a {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #2F5D50;
+      text-decoration: none;
+    }
+    .post a:hover { text-decoration: underline; }
+    .date { color: #66736C; font-size: .9rem; }
+    .back { display: inline-block; margin-top: 25px; }
+    @media (max-width: 600px) {
+      main { margin: 10px; padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>철학 게시판</h1>
+    <p>철학과 삶에 관한 생각을 정리하는 공간입니다.</p>
+
+    {% assign articles = site.categories.philosophy %}
+    <p>전체 게시글: {{ articles.size }}개</p>
+    <hr>
+
+    {% for post in articles %}
+      <div class="post">
+        <a href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+        <div class="date">
+          {{ post.date | date: "%Y-%m-%d" }}
+        </div>
+      </div>
+    {% else %}
+      <p>아직 등록된 게시글이 없습니다.</p>
+    {% endfor %}
+
+    <a class="back" href="{{ '/' | relative_url }}">
+      홈페이지로 돌아가기
+    </a>
+  </main>
+</body>
+</html>
