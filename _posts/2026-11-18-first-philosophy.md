@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: "철학은 왜 필요한가?"
