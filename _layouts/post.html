@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>{{ page.title | escape }} | Amor Insight</title>
+  <style>
+    body {
+      background: #EEF1E8;
+      color: #2A3530;
+      font-family: "Malgun Gothic", sans-serif;
+      margin: 0;
+      line-height: 1.9;
+    }
+    main {
+      max-width: 780px;
+      margin: 40px auto;
+      padding: 35px;
+      background: #FAFBF6;
+      border-radius: 16px;
+    }
+    h1, h2 { color: #2F5D50; }
+    a { color: #2F5D50; }
+    .date { color: #66736C; }
+    @media (max-width: 600px) {
+      main { margin: 10px; padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav>
+      <a href="{{ '/philosophy.html' | relative_url }}">
+        철학 게시판
+      </a>
+      |
+      <a href="{{ '/' | relative_url }}">홈으로</a>
+    </nav>
+
+    <h1>{{ page.title }}</h1>
+    <p class="date">
+      작성일: {{ page.date | date: "%Y-%m-%d" }}
+    </p>
+    <hr>
+
+    <article>
+      {{ content }}
+    </article>
+
+    <hr>
+    <p>
+      <a href="{{ '/philosophy.html' | relative_url }}">
+        게시글 목록으로 돌아가기
+      </a>
+    </p>
+  </main>
+</body>
+</html>
